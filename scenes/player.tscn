@@ -3,10 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://coxvk5btw7ipu" path="res://PNG/playerShip1_red.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://d4kmlr0na6sgm" path="res://scenes/player.gd" id="1_g2els"]
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
 speed = 200
 
 [node name="player" type="Sprite2D" parent="."]
 position = Vector2(-1, -4)
 texture = ExtResource("1_3vyb7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-8, -43, 5, -43, 12, -15, 34, -3, 44, -9, 49, -9, 46, 20, 41, 17, 13, 23, 6, 34, -10, 34, -17, 22, -47, 20, -50, -9, -40, -4, -15, -16)
