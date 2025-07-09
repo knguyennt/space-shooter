@@ -15,6 +15,7 @@ func _on_timer_timeout() -> void:
 	print("meteor") # Replace with function body.
 
 var meteor_scence: PackedScene = load("res://scenes/meteor.tscn")
+
 func _on_meteor_timer_timeout() -> void:
 	var meteor = meteor_scence.instantiate()
 	$Meteors.add_child(meteor)

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://d4kmlr0na6sgm" path="res://scenes/player.gd" id="1_g2els"]
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_g2els")
 speed = 200
 
