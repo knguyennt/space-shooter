@@ -6,7 +6,6 @@
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_g2els")
-speed = 200
 
 [node name="player" type="Sprite2D" parent="."]
 position = Vector2(-1, -4)
@@ -14,3 +13,12 @@ texture = ExtResource("1_3vyb7")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-8, -43, 5, -43, 12, -15, 34, -3, 44, -9, 49, -9, 46, 20, 41, 17, 13, 23, 6, 34, -10, 34, -17, 22, -47, 20, -50, -9, -40, -4, -15, -16)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(1, -120)
+gizmo_extents = 37.0
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
