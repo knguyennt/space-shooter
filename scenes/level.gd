@@ -3,7 +3,12 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	var screen_size := get_viewport().get_visible_rect().size
+	var rng := RandomNumberGenerator.new()
+	for star in $Stars.get_children():
+		var random_x = rng.randi_range(0, screen_size.x)
+		var random_y = rng.randi_range(0, screen_size.y)
+		star.position = Vector2(random_x, random_y)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
