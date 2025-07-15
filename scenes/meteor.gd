@@ -16,6 +16,7 @@ func _ready() -> void:
 	position = Vector2(random_x, random_y)
 
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var rng := RandomNumberGenerator.new()

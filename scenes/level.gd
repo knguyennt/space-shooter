@@ -8,7 +8,10 @@ func _ready() -> void:
 	for star in $Stars.get_children():
 		var random_x = rng.randi_range(0, screen_size.x)
 		var random_y = rng.randi_range(0, screen_size.y)
-		star.position = Vector2(random_x, random_y)
+		star.position = Vector2(random_x, random_y) 
+		var random_scale = rng.randf_range(0,1)
+		star.scale = Vector2(random_scale, random_scale)
+		star.speed_scale = rng.randf_range(0.5,1.5)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
