@@ -1,6 +1,4 @@
 extends Node2D
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Area2D/Sprite2D.scale = Vector2(0,0)
