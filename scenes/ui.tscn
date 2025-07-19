@@ -1,9 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://b52gg0m1tmawq"]
 
 [ext_resource type="FontFile" uid="uid://c20y0belqm33c" path="res://Bonus/kenvector_future_thin.ttf" id="1_nt7q6"]
-[ext_resource type="Texture2D" uid="uid://cl3xetk02fo5s" path="res://PNG/UI/playerLife1_red.png" id="2_x4jx1"]
+[ext_resource type="Script" uid="uid://dyogolne7cy22" path="res://scenes/ui.gd" id="1_yev5y"]
 
-[node name="UI" type="CanvasLayer"]
+[node name="UI" type="CanvasLayer" groups=["ui"]]
+script = ExtResource("1_yev5y")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 5
@@ -35,30 +36,7 @@ theme_override_constants/margin_top = 5
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_x4jx1")
+[node name="ScoreTimer" type="Timer" parent="."]
+autostart = true
 
-[node name="TextureRect2" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_x4jx1")
-
-[node name="TextureRect3" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_x4jx1")
-
-[node name="TextureRect4" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_x4jx1")
-
-[node name="TextureRect5" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_x4jx1")
-
-[node name="TextureRect6" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_x4jx1")
-
-[node name="TextureRect7" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_x4jx1")
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]

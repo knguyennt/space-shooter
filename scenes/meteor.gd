@@ -2,6 +2,7 @@ extends Area2D
 
 const meteorTextures := ["res://PNG/Meteors/meteorBrown_big1.png", "res://PNG/Meteors/meteorBrown_big2.png", "res://PNG/Meteors/meteorGrey_big1.png", "res://PNG/Meteors/meteorGrey_big2.png"]
 var direction = 0
+signal colision
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var rng := RandomNumberGenerator.new()
@@ -25,4 +26,9 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	print("collide")
+	colision.emit()
+
+
+func _on_area_entered(area: Area2D) -> void:
+	area.queue_free()
+	queue_free()
