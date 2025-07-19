@@ -38,5 +38,3 @@ func _on_player_laser(pos) -> void:
 	var laser = laser_scence.instantiate()
 	$Lasers.add_child(laser)
 	laser.position = pos
-	
-	print("player shoot ", pos )
